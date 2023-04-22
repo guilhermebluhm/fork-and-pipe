@@ -35,8 +35,8 @@ int main(){
         std::cout << "i'm parent process" << "\n";
         std::cout << "message for child process: " << resp << "\n";
         //close read process
+        waitpid(pid, NULL, 0);
         close(fd[0]);
-        wait(NULL);
         std::cout << "finishing parent process";
     }
     //child process
